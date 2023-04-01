@@ -11,7 +11,9 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      this.belongsToMany(models.User, {through: 'orderProduct'})
     }
+
   }
   Product.init({
     prod_type: DataTypes.STRING,
